@@ -28,7 +28,30 @@ class manejador:
         for elemento in self.__lista:
             cadena+=('{},'.format(elemento))
         return cadena
-        
+    def buscar(self,facu):
+        i = 0
+        while i < len(self.__lista) and self.__lista[i].getcode() != facu:
+            i += 1
+        if i == len(self.__lista):
+            i = -1
+        return i
+    
+    
+    
+    def Listarcarreras(self):
+        facu=input('ingrese un codigo de facultad: ')
+        indice=self.buscar(facu)
+        if indice!=-1:
+            print("lo encontro")
+            print('{}'.format(self.__lista[indice].getnom()))
+            print("carreras:")
+            self.__lista[indice].listarcarreras()
+        else:
+            print("no existe ese codigo de carrera")
+    def buscarfacxcarrera(self):
+        carrera=input("ingrese el nombre de carrera")
+        for facultad in self.__lista:
+            facultad.listarcarreras2(carrera)
 
 
 

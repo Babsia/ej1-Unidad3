@@ -9,5 +9,11 @@ class carrera:
         self.__duracion=duracion
         self.__titulo=titulo
         return
-        
+    def getnom(self):
+        return self.__nombre
+    def getduracion(self):
+        return self.__duracion
+    def getcode(self):
+        return self.__codigo
+
     
